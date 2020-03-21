@@ -1,7 +1,7 @@
 #include <arpa/inet.h>
 #include <cassert>
 
-u_int16_t compute_icmp_checksum (const void *buff, int length)
+u_int16_t compute_icmp_checksum (const u_int16_t *buff, int length)
 {
 	u_int32_t sum;
 	const u_int16_t* ptr = buff;
