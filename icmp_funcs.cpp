@@ -1,5 +1,4 @@
-#include <arpa/inet.h>
-#include <cassert>
+#include "icmp_funcs.h"
 
 u_int16_t compute_icmp_checksum (const u_int16_t *buff, int length)
 {
@@ -11,3 +10,7 @@ u_int16_t compute_icmp_checksum (const u_int16_t *buff, int length)
 	sum = (sum >> 16) + (sum & 0xffff);
 	return (u_int16_t)(~(sum + (sum >> 16)));
 }
+
+// char check_ip_address(string all_address, string ip){
+// 	return all_address.c_str();
+// }
