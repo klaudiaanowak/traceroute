@@ -1,4 +1,8 @@
+#include <stdio.h>
+#include <string.h>
 #include <arpa/inet.h>
+#include <errno.h>
+#include <stdlib.h>
 
 int socket_err_handle(int family, int type, int protocol);
 ssize_t recvfrom_err_handle (int fd, void *ptr, size_t nbytes, int flags, struct sockaddr_in *sa, socklen_t *salenptr);

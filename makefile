@@ -14,7 +14,7 @@ socket_err_handle: socket_err_handle.cpp
 	$(CXX) $(CFLAGS) socket_err_handle.cpp socket_err_handle.h
 
 clean:
-	rm -rf *.o 
+	rm -rf *.o  *.gch
 
 distclean:
-	rm -rf *.o $(OUTPUT)
+	rm -rf *.o *.gch $(OUTPUT)

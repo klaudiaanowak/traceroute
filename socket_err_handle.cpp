@@ -1,8 +1,3 @@
-#include <stdio.h>
-#include <string.h>
-#include <arpa/inet.h>
-#include <errno.h>
-#include <stdlib.h>
 #include "socket_err_handle.h"
 
 int socket_err_handle(int family, int type, int protocol)

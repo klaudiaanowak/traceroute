@@ -12,6 +12,7 @@
 #include "socket_err_handle.h"
 using namespace std;
 
+const int ICMP_HEADER_LEN  = 8;
 int pid;
 const int maxttl = 30;
 unsigned char buffer[IP_MAXPACKET + 1];
@@ -150,7 +151,7 @@ void sendPacket(sockaddr_in &recipient, int sockfd, int ttl)
 	header.un.echo.id = pid;
 	header.un.echo.sequence = ttl;
 	header.checksum = 0;
-	header.checksum = compute_icmp_checksum((u_int16_t *)&header, sizeof(header));
+	header.checksum = compute_icmp_checksum((short *)&header, sizeof(header));
 
 	setsockopt_err_handle(sockfd, IPPROTO_IP, IP_TTL, &ttl, sizeof(int));
 	sendto_err_handle(
