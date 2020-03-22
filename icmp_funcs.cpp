@@ -1,5 +1,5 @@
 #include "icmp_funcs.h"
-
+#include <cassert>
 u_int16_t compute_icmp_checksum (const u_int16_t *buff, int length)
 {
 	u_int32_t sum;
@@ -11,6 +11,3 @@ u_int16_t compute_icmp_checksum (const u_int16_t *buff, int length)
 	return (u_int16_t)(~(sum + (sum >> 16)));
 }
 
-// char check_ip_address(string all_address, string ip){
-// 	return all_address.c_str();
-// }

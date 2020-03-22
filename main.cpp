@@ -127,10 +127,7 @@ int main(int argc, char **argv)
 					}
 					i++;
 				}
-				// else if (i == 3)
-				// {
-				// 	printf("%d. %s ???\n", icmp_packet->icmp_seq, ip_address);
-				// }
+
 			}
 			else
 			{
