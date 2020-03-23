@@ -1,14 +1,6 @@
 #include "socket_err_handle.h"
 
-int socket_err_handle(int family, int type, int protocol)
-{
-	int res;
-	if ((res = socket(family, type, protocol)) < 0)
-	{
-		fprintf(stderr, "socket error: %s\n", strerror(errno));
-	}
-	return res;
-}
+
 
 ssize_t recvfrom_err_handle(int fd, void *ptr, size_t nbytes, int flags, struct sockaddr_in *sa, socklen_t *salenptr)
 {

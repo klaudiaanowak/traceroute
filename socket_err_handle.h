@@ -4,7 +4,6 @@
 #include <errno.h>
 #include <stdlib.h>
 
-int socket_err_handle(int family, int type, int protocol);
 ssize_t recvfrom_err_handle (int fd, void *ptr, size_t nbytes, int flags, struct sockaddr_in *sa, socklen_t *salenptr);
 void sendto_err_handle(int fd, const void *ptr, int nbytes, int flags, const struct sockaddr_in *sa, socklen_t salen);
 void setsockopt_err_handle(int sockfd, int level, int optname, const void *optval, socklen_t optlen);

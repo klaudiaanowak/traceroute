@@ -1,13 +1,13 @@
+#include <netinet/ip_icmp.h>
 #include "icmp_funcs.h"
 
-short compute_icmp_checksum (const short *buff, int length)
+u_int16_t compute_icmp_checksum (const void *buff, int length)
 {
-	long sum;
-	const short* ptr = buff;
+	u_int32_t sum;
+	const u_int16_t* ptr = (const u_int16_t*) buff;
 	assert (length % 2 == 0);
 	for (sum = 0; length > 0; length -= 2)
 		sum += *ptr++;
 	sum = (sum >> 16) + (sum & 0xffff);
-	return (short)(~(sum + (sum >> 16)));
+	return (u_int16_t)(~(sum + (sum >> 16)));
 }
-
